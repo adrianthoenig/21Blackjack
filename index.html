@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link href="./css/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <script type="module" src="./js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@4.5.1/tsparticles.confetti.bundle.min.js"></script>
+</head>
+
+<body class="bg-background text-white p-6 md:py-16">
+    <!-- Navbar -->
+    <header class="max-w-7xl mb-8 md:mb-12 mx-auto flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+        <h1 class="text-secondary-200 uppercase text-2xl font-semibold tracking-tight md:text-6xl">Blackjack</h1>
+        <nav class="flex justify-between md:justify-start md:gap-4">
+
+            <!-- Reiniciar partida -->
+            <button id="btn-restart"
+                class="cursor-pointer border border-secondary-100 text-sm text-center hover:bg-secondary-100 hover:text-black transition-colors px-[14px] py-[7px] rounded-lg text-secondary-50">
+                Reiniciar partida
+            </button>
+
+            <!-- Estado del juego -->
+            <div
+                class="cursor-pointer flex items-center gap-2 text-sm text-center bg-primary-900 hover:bg-primary-700 text-primary-50 transition-colors px-[14px] py-[7px] rounded-lg">
+                <div class="w-2 h-2 rounded-full bg-primary-200 animate-pulse"></div>
+                <span>Mesa en vivo</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto flex flex-col gap-4">
+        <div class="flex flex-col gap-12">
+            <div class="flex flex-col gap-4">
+                <!-- Status  -->
+                <section class="p-6 bg-surface rounded-lg text-sm md:text-lg">
+                    <p id="game-status">El juego ha empezado!</p>
+                </section>
+
+                <!-- Game table -->
+                <section class="flex flex-col gap-2">
+                    <!-- Banca -->
+                    <div id="banca-main-container"
+                        class="p-4 flex flex-col gap-6 bg-surface-elevated rounded-lg border border-4 border-transparent ">
+
+                        <!-- Top part -->
+                        <div class="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+                            <h2 id="banca-name" class="text-xl tracking-tight md:text-2xl">Banca</h2>
+                            <div class="bg-secondary-900 rounded-lg px-4 py-2">
+                                Puntos: <span id="banca-points">0</span>
+                            </div>
+                        </div>
+
+                        <!-- Cards -->
+                        <div id="banca-card-container" class="w-full flex flex-wrap gap-2">
+                            <!-- CARDS HERE -->
+                        </div>
+                    </div>
+
+                    <!-- Player -->
+                    <div id="player-main-container"
+                        class="p-4 flex flex-col gap-6 bg-surface-elevated rounded-lg border border-4 border-transparent">
+
+                        <!-- Top part -->
+                        <div class="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
+                            <h2 id="player-name" class="text-xl tracking-tight md:text-2xl">
+                                Loading...
+                            </h2>
+                            <div class="bg-secondary-900 rounded-lg px-4 py-2">
+                                Puntos: <span id="player-points">0</span>
+                            </div>
+                        </div>
+
+                        <!-- Cards -->
+                        <div id="player-card-container" class="w-full flex flex-wrap gap-2">
+                            <!-- CARDS HERE -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="flex flex-col justify-center gap-4 md:flex-row">
+                <button id="btn-hit" class="btn-hit disabled">
+                    Pedir carta
+                </button>
+                <button id="btn-stand" class="btn-stand disabled">
+                    Plantarse
+                </button>
+
+                <button id="btn-again" class="btn-again hidden">
+                    Volver a jugar
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

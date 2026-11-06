@@ -1,0 +1,17 @@
+{
+  "name": "blackjack_daw",
+  "version": "1.0.0",
+  "description": "Juego de Blackjack para el primer evaluable de Entorno Cliente",
+  "license": "MIT",
+  "author": "Adrian Thoenig",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @tailwindcss/cli -i ./css/main.css -o ./css/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.4",
+    "tailwindcss": "^4.3.4"
+  }
+}

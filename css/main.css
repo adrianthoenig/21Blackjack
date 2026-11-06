@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+/* Active player */
+.active {
+    @apply border border-4 border-success-light
+}
+
+/* Buttons disabled */
+.btn-hit {
+    @apply cursor-pointer bg-gradient-to-r from-primary-900 to-primary-400 px-[14px] py-[7px] border border-2 border-transparent hover:border-primary-400 rounded-lg text-center text-primary-50
+}
+
+.btn-hit.disabled {
+    @apply cursor-not-allowed bg-gradient-to-r from-primary-900 to-primary-400 px-[14px] py-[7px] border border-2 border-transparent  rounded-lg text-center text-primary-50 opacity-60
+}
+
+.btn-stand {
+    @apply cursor-pointer bg-gradient-to-r from-danger to-[#f87171] border border-2 border-transparent hover:border-danger-light transition-colors px-[14px] py-[7px] rounded-lg text-center text-primary-50
+}
+
+.btn-stand.disabled {
+    @apply cursor-not-allowed bg-gradient-to-r from-danger to-[#f87171] border border-2 border-transparent transition-colors px-[14px] py-[7px] rounded-lg text-center text-primary-50 opacity-60
+}
+
+.btn-again {
+    @apply cursor-pointer bg-gradient-to-r from-secondary-900 to-secondary-400 px-[14px] py-[7px] border border-2 border-transparent hover:border-secondary-400 rounded-lg text-center text-secondary-50
+}
+
+.hidden {
+    @apply hidden;
+}
+
+/* Carta */
+.card {
+    @apply w-20 hover:scale-105 transition-all relative
+}
+
+/* Estilos personalizados */
+@theme {
+
+    /* Fuente */
+    --font-sans: "Poppins", sans-serif;
+
+
+    /* Color primario */
+    --color-primary-50: #ECFDF5;
+    --color-primary-100: #D1FAE5;
+    --color-primary-200: #A7F3D0;
+    --color-primary-300: #6EE7B7;
+    --color-primary-400: #34D399;
+    --color-primary-500: #10B981;
+    --color-primary-600: #059669;
+    --color-primary-700: #047857;
+    --color-primary-800: #065F46;
+    --color-primary-900: #064E3B;
+    --color-primary-950: #022C22;
+
+    /* Color secundario */
+    --color-secondary-50: #FFFBEB;
+    --color-secondary-100: #FEF3C7;
+    --color-secondary-200: #FDE68A;
+    --color-secondary-300: #FCD34D;
+    --color-secondary-400: #FBBF24;
+    --color-secondary-500: #F59E0B;
+    --color-secondary-600: #D97706;
+    --color-secondary-700: #B45309;
+    --color-secondary-800: #92400E;
+    --color-secondary-900: #78350F;
+    --color-secondary-950: #451A03;
+
+    /* Blackjack */
+    --color-background: #071C17;
+    --color-surface: #0B2920;
+    --color-surface-elevated: #10382B;
+    --color-border: #1F4939;
+
+    /* Semantic */
+    --color-success: #16A34A;
+    --color-success-light: #DCFCE7;
+
+    --color-danger: #DC2626;
+    --color-danger-light: #FEE2E2;
+}
+
+.startRotation {
+    animation: startRotation 1s ease-in;
+}
+
+.finishRotation {
+    animation: finishRotation 1s ease-in-out;
+}
+
+.deal {
+    animation: deal 0.2s ease-in;
+}
+
+
+@keyframes startRotation {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes finishRotation {
+    0% {
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes deal {
+    0% {
+        transform: translateY(-40%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
